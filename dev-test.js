@@ -1,7 +1,7 @@
-const Block = require('./block');
+const Blockchain = require('./blockchain');
 
-// Create a new instance of Block
-const testBlock = Block.mineBlock(Block.genesis(), 'chankruze gave $10,000 to nishant');
+const bc = new Blockchain();
 
-// Log the test data
-console.log(testBlock.toString());
+for (let i = 0; i < 10; i++){
+    console.log(bc.addBlock(`foo ${i}`).toString());
+}
