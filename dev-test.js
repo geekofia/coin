@@ -1,7 +1,7 @@
 const Block = require('./block');
 
 // Create a new instance of Block
-const block = new Block("Time in milli", "Previous node hash", "This node hash", "Data");
+const testBlock = Block.mineBlock(Block.genesis(), 'chankruze gave $10,000 to nishant');
 
 // Log the test data
-console.log(block.toString());
+console.log(testBlock.toString());
