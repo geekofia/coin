@@ -18,7 +18,7 @@ class Blockchain {
             return false;
         }
 
-        for (let i = 1; 1 < chain.length; i++) {
+        for (let i = 1; i < chain.length; i++) {
             const block = chain[i];
             const lastBlock = chain[i - 1];
 
