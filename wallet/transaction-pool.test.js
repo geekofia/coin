@@ -50,4 +50,9 @@ describe('TransactionPool', () => {
             expect(tp.validTransactions()).toEqual(validTransactions);
         });
     });
+
+    it('clears transactions', () => {
+        tp.clear();
+        expect(tp.transactions).toEqual([]);
+    });
 });

@@ -36,6 +36,12 @@ class Wallet {
 
         return transaction;
     }
+
+    static blockchainWallet() {
+        const blockchainWallet = new this();
+        blockchainWallet.address = 'Geekofia-Wallet';
+        return blockchainWallet;
+    }
 }
 
 module.exports = Wallet;
