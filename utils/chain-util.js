@@ -1,6 +1,8 @@
 const EC = require('elliptic').ec;
 const uuidV1 = require('uuid/v1');
 const ec = new EC('secp256k1');
+// use sha-256 for generating hash
+const SHA256 = require('crypto-js/sha256');
 
 /**
  * secp256k1
@@ -15,12 +17,19 @@ const ec = new EC('secp256k1');
  */
 
 class ChainUtil {
+    // generates the keypair for a wallet
     static genKeyPair() {
         return ec.genKeyPair();
     }
 
+    // generates unique transaction id
     static id() {
         return uuidV1();
+    }
+
+    // generates sha256 hash of data
+    static hash(data){
+        return SHA256(JSON.stringify(data)).toString();
     }
 }
 
