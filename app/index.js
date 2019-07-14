@@ -28,6 +28,10 @@ app.get('/transactions', (req, res) => {
     res.json(tp.transactions);
 });
 
+app.get('/public-key', (req, res) => {
+    res.json({ publicKey: wallet.publicKey });
+});
+
 /** 
  * POST endpoints
 */
