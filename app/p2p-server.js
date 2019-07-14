@@ -37,7 +37,7 @@ class P2pServer {
         });
     }
 
-    messageHandler(socket){
+    messageHandler(socket) {
         socket.on('message', message => {
             const data = JSON.parse(message);
 
@@ -45,11 +45,11 @@ class P2pServer {
         });
     }
 
-    sendChain(socket){
+    sendChain(socket) {
         socket.send(JSON.stringify(this.blockchain.chain));
     }
 
-    syncChains(){
+    syncChains() {
         this.sockets.forEach(socket => this.sendChain(socket));
     }
 }

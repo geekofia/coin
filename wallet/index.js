@@ -14,7 +14,7 @@ class Wallet {
         balance     : ${this.balance}`
     }
 
-    sign(dataHash){
+    sign(dataHash) {
         return this.keyPair.sign(dataHash);
     }
 }
