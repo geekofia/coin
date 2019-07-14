@@ -1,9 +1,9 @@
-class TransactionPool{
-    constructor(){
+class TransactionPool {
+    constructor() {
         this.transactions = [];
     }
 
-    updateOrAddTransaction(transaction){
+    updateOrAddTransaction(transaction) {
         let transactionWithId = this.transactions.find(t => t.id === transaction.id);
 
         if (transactionWithId) {
@@ -11,6 +11,10 @@ class TransactionPool{
         } else {
             this.transactions.push(transaction);
         }
+    }
+
+    existingTransaction(address) {
+        return this.transactions.find(t => t.input.address === address);
     }
 }
 
