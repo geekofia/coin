@@ -31,6 +31,11 @@ class ChainUtil {
     static hash(data){
         return SHA256(JSON.stringify(data)).toString();
     }
+
+    // verify the transaction by verifying the signature
+    static verifySignature(publicKey, signature, dataHash){
+        return ec.keyFromPublic(publicKey, 'hex').verify(dataHash, signature);
+    }
 }
 
 module.exports = ChainUtil;
